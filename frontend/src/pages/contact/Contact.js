@@ -58,24 +58,24 @@ const Contact = () => {
         <div className="details">
           <Card cardClass={"card2"}>
             <h3>Our Contact Information</h3>
-            <p>Fill the form or contact us via other channels listed below</p>
+            <p>Fill the form or Contact us:</p>
 
             <div className="icons">
               <span>
                 <FaPhoneAlt />
-                <p>070123123123</p>
+                <p>09773310734</p>
               </span>
               <span>
                 <FaEnvelope />
-                <p>Support@invent.com</p>
+                <p>saintclair420@gmail.com</p>
               </span>
               <span>
                 <GoLocation />
-                <p>Abuja, Nigeria</p>
+                <p>Koronadal City, Philippines</p>
               </span>
               <span>
                 <FaTwitter />
-                <p>@ZinoTrust</p>
+                <p>@JMP Trade</p>
               </span>
             </div>
           </Card>

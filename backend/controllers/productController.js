@@ -3,6 +3,8 @@ const Product = require("../models/productModel");
 const { fileSizeFormatter } = require("../utils/fileUpload");
 const cloudinary = require("cloudinary").v2;
 
+
+
 // Create Prouct
 const createProduct = asyncHandler(async (req, res) => {
   const { name, sku, category, quantity, price, description } = req.body;
@@ -19,13 +21,13 @@ const createProduct = asyncHandler(async (req, res) => {
     // Save image to cloudinary
     let uploadedFile;
     try {
-      uploadedFile = await cloudinary.uploader.upload(req.file.path, {
+        uploadedFile = await cloudinary.uploader.upload(req.file.path, {
         folder: "Pinvent App",
         resource_type: "image",
       });
     } catch (error) {
       res.status(500);
-      throw new Error("Image could not be uploaded");
+      throw new Error("Image could not be uploaded.");
     }
 
     fileData = {
@@ -63,12 +65,12 @@ const getProduct = asyncHandler(async (req, res) => {
   // if product doesnt exist
   if (!product) {
     res.status(404);
-    throw new Error("Product not found");
+    throw new Error("Product not found.");
   }
   // Match product to its user
   if (product.user.toString() !== req.user.id) {
     res.status(401);
-    throw new Error("User not authorized");
+    throw new Error("User not authorized.");
   }
   res.status(200).json(product);
 });
@@ -79,12 +81,12 @@ const deleteProduct = asyncHandler(async (req, res) => {
   // if product doesnt exist
   if (!product) {
     res.status(404);
-    throw new Error("Product not found");
+    throw new Error("Product not found.");
   }
   // Match product to its user
   if (product.user.toString() !== req.user.id) {
     res.status(401);
-    throw new Error("User not authorized");
+    throw new Error("User not authorized.");
   }
   await product.remove();
   res.status(200).json({ message: "Product deleted." });
@@ -100,12 +102,12 @@ const updateProduct = asyncHandler(async (req, res) => {
   // if product doesnt exist
   if (!product) {
     res.status(404);
-    throw new Error("Product not found");
+    throw new Error("Product not found.");
   }
   // Match product to its user
   if (product.user.toString() !== req.user.id) {
     res.status(401);
-    throw new Error("User not authorized");
+    throw new Error("User not authorized.");
   }
 
   // Handle Image upload
@@ -120,7 +122,7 @@ const updateProduct = asyncHandler(async (req, res) => {
       });
     } catch (error) {
       res.status(500);
-      throw new Error("Image could not be uploaded");
+      throw new Error("Image could not be uploaded.");
     }
 
     fileData = {

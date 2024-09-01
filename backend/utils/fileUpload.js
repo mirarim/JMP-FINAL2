@@ -1,4 +1,12 @@
 const multer = require("multer");
+const cloudinary = require("cloudinary").v2
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_KEY,
+  api_secret: process.env.CLOUD_KEY_SECRET
+})
+
 
 // Define file storage
 const storage = multer.diskStorage({
@@ -9,7 +17,7 @@ const storage = multer.diskStorage({
     cb(
       null,
       new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname
-    ); // 23/08/2022
+    ); 
   },
 });
 
@@ -41,4 +49,4 @@ const fileSizeFormatter = (bytes, decimal) => {
   );
 };
 
-module.exports = { upload, fileSizeFormatter };
+module.exports = { upload, fileSizeFormatter, cloudinary };

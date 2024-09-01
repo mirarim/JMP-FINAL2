@@ -41,7 +41,7 @@ const ProductList = ({ products, isLoading }) => {
   const confirmDelete = (id) => {
     confirmAlert({
       title: "Delete Product",
-      message: "Are you sure you want to delete this product.",
+      message: "Are you sure you want to delete this product?",
       buttons: [
         {
           label: "Delete",
@@ -122,12 +122,12 @@ const ProductList = ({ products, isLoading }) => {
                       <td>{shortenText(name, 16)}</td>
                       <td>{category}</td>
                       <td>
-                        {"$"}
+                        {"₱"}
                         {price}
                       </td>
                       <td>{quantity}</td>
                       <td>
-                        {"$"}
+                        {"₱"}
                         {price * quantity}
                       </td>
                       <td className="icons">
