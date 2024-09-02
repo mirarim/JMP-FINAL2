@@ -111,32 +111,13 @@ const EditProfile = () => {
               <br />
               <code>Email cannot be changed.</code>
             </p>
-            <p>
-              <label>Phone:</label>
-              <input
-                type="text"
-                name="phone"
-                value={profile?.phone}
-                onChange={handleInputChange}
-              />
-            </p>
-            <p>
-              <label>Bio:</label>
-              <textarea
-                name="bio"
-                value={profile?.bio}
-                onChange={handleInputChange}
-                cols="30"
-                rows="10"
-              ></textarea>
-            </p>
-            <p>
-              <label>Photo:</label>
-              <input type="file" name="image" onChange={handleImageChange} />
-            </p>
-            <div>
-              <button className="--btn --btn-primary">Edit Profile</button>
-            </div>
+            
+            
+
+
+
+
+
           </span>
         </form>
       </Card>
@@ -147,3 +128,37 @@ const EditProfile = () => {
 };
 
 export default EditProfile;
+
+//<div>
+//<button className="--btn --btn-primary">Edit Profile</button>
+//</div>
+
+
+
+//<p>
+              //<label>Bio:</label>
+              //<textarea
+               // name="bio"
+               // value={profile?.bio}
+               // onChange={handleInputChange}
+               // cols="30"
+              //  rows="10"
+            //  ></textarea>
+           // </p>
+
+
+
+          // <p>
+        //      <label>Phone:</label>
+        ///      <input
+       //         type="text"
+         //       name="phone"
+       //         value={profile?.phone}
+         //       onChange={handleInputChange}
+         //     />
+        //    </p>
+            
+         //   <p>
+         //     <label>Photo:</label>
+         //     <input type="file" name="image" onChange={handleImageChange} />
+         //   </p>

@@ -251,7 +251,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
     userId: user._id,
     token: hashedToken,
     createdAt: Date.now(),
-    expiresAt: Date.now() + 30 * (60 * 1000), // Thirty minutes
+    expiresAt: Date.now() + 30 * (60 * 1000), 
   }).save();
 
   // Construct Reset Url
